@@ -119,7 +119,13 @@ const watchList = [
   function myWatchList(movies) {
 
     // Din kod här:
-
+    
+    return movies.map(movie => {
+      const title = movie.Title;
+      const rating = movie.imdbRating;
+      return `Title: ${title}, rating: ${rating}`
+    })
+    
   }
 
 

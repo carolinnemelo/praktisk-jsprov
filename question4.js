@@ -20,8 +20,14 @@ const authors = [
 
   function getAuthorsByFullname(authors) {
     // Din kod här
-    
+    const fullName = authors.map(author => {
+      const first = author.first;
+      const last = author.last;
+       return `${first} ${last}`
+    })
+    return fullName
+
   }
 
 // Test
-//console.log(getAuthorsByFullname(authors)); // Ska logga: ["Leo Tolstoj", "Alexander Pusjkin", "Fjodor Dostojevski", "Anton Tjechov", "Vladimir Nabokov", "Maksim Gorkij", "Koldan Egorov", "Nikolaj Gogl", "Leonid Andrejev", "Mirra Lokhvitskaya", "Ivan Krylov", "Michail Lermontov", "Alexandr Blok" ]
+console.log(getAuthorsByFullname(authors)); // Ska logga: ["Leo Tolstoj", "Alexander Pusjkin", "Fjodor Dostojevski", "Anton Tjechov", "Vladimir Nabokov", "Maksim Gorkij", "Koldan Egorov", "Nikolaj Gogl", "Leonid Andrejev", "Mirra Lokhvitskaya", "Ivan Krylov", "Michail Lermontov", "Alexandr Blok" ]
