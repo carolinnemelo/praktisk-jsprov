@@ -10,6 +10,10 @@ const tweets = [
 
 // Din kod här:
 
+const updatedTweets = (arr) => {
+  return arr.filter(tweet => {
+  return tweet.id !== 823423
+})}
 
 
 
@@ -19,13 +23,42 @@ const tweets = [
 
 // Din kod här:
 
+// const tweetsHtml = (arr) => {
+//   const ul = document.createElement('ul');
+//   ul.id = 'tweets';
+//   document.body.appendChild(ul);
+
+//   arr.map(tweet => {
+//     const li = document.createElement('li');
+//     ul.appendChild(li);
+//     const text = tweet.text;
+//     li.innerHTML = text
+
+//   })
+// }
+
+const tweetsHtml = (arr) => {
+  const ul = document.createElement('ul');
+  ul.id = 'tweets';
+  document.body.appendChild(ul);
+
+  let liArray = arr.map(tweet => {
+    const text = `<li>${tweet.text}</li>`;
+    return text
+  })
+  liArray = liArray.join(' ')
+  ul.innerHTML = liArray
+
+}
 
 
-
+tweetsHtml(updatedTweets(tweets));
 
 
 // Test
-console.log(updatedTweets); // Ska logga en array utan kommentaren med id 823423
+console.log(updatedTweets(tweets)); // Ska logga en array utan kommentaren med id 823423
+
+
 // [
 //   { text: 'Elon Musk is ...', id: 523423 },
 //   { text: 'The future of AI ...', id: 2039842 },
